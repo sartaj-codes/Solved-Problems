@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+   int num;
+   scanf("%d", &num);
+   if( 8 > num )
+       printf("%d", num);
+   else
+       printf("%d", (num & 7) );
+      
+   return 0;
+ }
+
+ 

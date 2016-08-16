@@ -19,7 +19,7 @@ int main()
          arr2[i-2] = arr2[i-1]  * arr[i-1];  
     }
     for( i = 0; i < n; i++ )
-    {
+    { 
          arr2[i] *= arr1[i];  
     }
     
