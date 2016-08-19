@@ -63,7 +63,7 @@ void copy_list()
 {   
     struct Node * ptr = first1;
     while(ptr != NULL)
-    {
+    {       //here 1 means temperary list point to first2
             create_node(1,ptr->data);
             ptr = ptr->next;
     }
@@ -84,7 +84,7 @@ int check_palin()
 }
 int main()
 {
-   
+   // 0 means list points to first1
    create_node(0,1);
    create_node(0,2);
    create_node(0,1);
