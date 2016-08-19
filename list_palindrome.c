@@ -84,7 +84,7 @@ int check_palin()
 }
 int main()
 {
-   int  i ;
+   
    create_node(0,1);
    create_node(0,2);
    create_node(0,1);
