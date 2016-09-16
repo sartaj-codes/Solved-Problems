@@ -38,10 +38,11 @@ Nod findAncestor(Nod nod_t, int A,int B)
 	Nod prev = nod_t;
 	while(nod_t.left != null || nod_t.right != null)
 	{
-		if(A == nod_t.key || B == nod_t.key)
-			return prev;
-		if(A > nod_t.key && nod_t.key > B || B > nod_t.key && nod_t.key > A)
-			return nod_t;
+	        /* root includes A or B*/   
+		if(A == nod_t.key || B == nod_t.key) return prev;
+		/* A and B are opposite */  
+		if(A > nod_t.key && nod_t.key > B || B > nod_t.key && nod_t.key > A) return nod_t;
+			
 		if(A > nod_t.key && B > nod_t.key)
 		{  prev = nod_t; nod_t = nod_t.right; }
 		else
