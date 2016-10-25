@@ -4,7 +4,7 @@ class Nod{
 	   Nod right;
 	   Nod(int n)
 	   {
-		   this.key  = n;
+		   this.key  = n;   
 		   this.left = null;
 		   this.right = null;
 	   }
