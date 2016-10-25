@@ -27,18 +27,32 @@ public class TrieBasic extends TrieInsertM {
 	void hardDelete(String s)
 	{
 		//TrieNode t = root;
-		hardDelete(root,s,0);
+		root = hardDelete(root,s,0);
 	}
-	void hardDelete(TrieNode root, String s, int i)
+	TrieNode hardDelete(TrieNode root, String s, int i)
 	{//System.out.print( root.value +" ");
-		if(i == s.length()) return ;
+		//if(root == null) return null;
+		if(i == s.length()) {
+			root.value = null;
+			int j;int m = 0;
+			for( j = 0; j < 26; j++ ) 
+			{
+				if(root.nodes[j] != null){
+					m = 1; break;
+				}
+			}
+			if( m == 0)
+			return null;
+			else return root;
+		}
 		
-		hardDelete(root.nodes[s.charAt(i)-'a'],s,i+1);
+		return  hardDelete(root.nodes[s.charAt(i)-'a'],s,i+1);
 		
 		//if(root != null)System.out.print("val: " + root.value +" ");
 		//System.out.print(i);System.out.print(" ");
-		if(root.nodes[s.charAt(i)-'a'].value == null) root.nodes[s.charAt(i)-'a'] = null;
-	
+		//if(root.nodes[s.charAt(i)-'a'].value == null) root.nodes[s.charAt(i)-'a'] = null;
+	    
+		
 	}
 
 	public static void main(String[] args) {
@@ -46,7 +60,7 @@ public class TrieBasic extends TrieInsertM {
 
 		TrieBasic obj = new TrieBasic();
 		obj.insert("sartaj", 10);
-		obj.insert("sangh", 20);
+		obj.insert("sar", 20);
 		obj.insert("dhiman", 80);
 		obj.insert("palvy", 350);
 		obj.insert("kaur", 312);
@@ -54,7 +68,7 @@ public class TrieBasic extends TrieInsertM {
 		obj.insert("is", 33);
 		obj.insert("king", 70);
 		//obj.softDelete("is");
-		obj.hardDelete("sangh");
+		obj.hardDelete("sar");
 		System.out.print(obj.search("sartaj"));
 		
 		
